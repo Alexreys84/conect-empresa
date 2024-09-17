@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre - Conecta Empresas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    /* From Uiverse.io by vinodjangid07 */
+    .Btn {
+      border: none;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition-duration: .4s;
+      cursor: pointer;
+      position: relative;
+      background-color: rgb(31, 31, 31);
+      overflow: hidden;
+    }
+
+    .svgIcon {
+      transition-duration: .3s;
+    }
+
+    .svgIcon path {
+      fill: white;
+    }
+
+    .text {
+      position: absolute;
+      color: rgb(255, 255, 255);
+      width: 120px;
+      font-weight: 600;
+      opacity: 0;
+      transition-duration: .4s;
+    }
+
+    .Btn:hover {
+      width: 110px;
+      transition-duration: .4s;
+      border-radius: 30px;
+    }
+
+    .Btn:hover .text {
+      opacity: 1;
+      transition-duration: .4s;
+    }
+
+    .Btn:hover .svgIcon {
+      opacity: 0;
+      transition-duration: .3s;
+    }
+
+    .navbar-custom {
+      background-color: #90979F;
+    }
+
+    .social-icons a {
+      font-size: 1.5rem;
+      margin: 0 0.5rem;
+    }
+
+    .btn-custom {
+      background-color: #90979F;
+      border-color: #90979F;
+    }
+
+    .btn-custom:hover {
+      background-color: #7a7f87;
+      border-color: #7a7f87;
+    }
+
+    .card {
+      background-color: #2c2c54;
+      color: #fff;
+    }
+
+    .text-purple {
+      color: #c56cf0;
+    }
+
+    .text-green {
+      color: #33d9b2;
+    }
+  </style>
+</head>
+
+<body class="bg-dark text-white">
+
+  <!-- Barra de Navegação -->
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+    <div class="container">
+      <a class="navbar-brand" href="./index.html">Conecta Empresas</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="./index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="sobre.html">Sobre</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Sign In</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cadastro.html">Sign Up</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    <div class="row">
+      <!-- Gráfico de Pacotes mais Vendidos -->
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title text-center text-purple">Pacotes Mais Vendidos</h5>
+            <canvas id="pacotesMaisVendidos"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Total de Pacotes Vendidos -->
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title text-center text-purple">Pacotes Mais Acessados</h5>
+            <canvas id="totalPacotesVendidos"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pacotes que se destacam -->
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title text-center text-green">Nichos Destacados Entre Clientes</h5>
+            <canvas id="pacotesDestacados"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Requisitos do Projeto -->
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title text-center" style="font-size: 1.5rem;">Requisitos do Conecta Empresas</h5>
+            <ul style="font-size: 1.2rem; line-height: 2;">
+              <p>
+                O "Conecta Empresas" é um sistema projetado para a venda de pacotes de dados voltado para diferentes
+                nichos de mercado, como imobiliário, automotivo e turismo, com foco na personalização conforme as
+                necessidades de cada cliente.O sistema inclui funcionalidades essenciais, como o cadastro e login de
+                usuários, garantindo uma experiência segura e fluida. Após o login, os usuários são redirecionados
+                automaticamente para a página inicial, onde podem explorar os pacotes disponíveis.
+                Uma das principais funcionalidades do sistema é a integração com a API PIX, permitindo que os usuários
+                realizem pagamentos online através de QR Codes gerados dinamicamente, além da integração com o WhatsApp
+                para confirmar transações.O design da interface foi cuidadosamente desenvolvido para ser responsivo,
+                garantindo acessibilidade tanto em dispositivos móveis quanto em desktops, utilizando Bootstrap e outros
+                frameworks modernos.
+              </p>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- Tabela de Funções -->
+      <div class="col-md-12 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title text-center">Desenvolvedores</h5>
+            <table class="table table-dark table-striped">
+              <thead>
+                <tr>
+                  <th>Nome</th>
+                  <th>Função</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Alex Reis</td>
+                  <td>Front-end</td>
+                </tr>
+                <tr>
+                  <td>Felipe Jun</td>
+                  <td>Auxiliar front-end</td>
+                </tr>
+                <tr>
+                  <td>Nicolas de Paula</td>
+                  <td>Back-end</td>
+                </tr>
+                <tr>
+                  <td>Thiago Porfirio</td>
+                  <td>WebScrapping</td>
+                </tr>
+                <!-- Adicione mais funções conforme necessário -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Rodapé -->
+  <footer class="navbar-custom text-white py-1">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="text-center">
+        <p class="mb-0">© 2024 Conecta Empresas. Todos os direitos reservados.</p>
+        <p class="mb-0">Desenvolvido por Sua Empresa</p>
+      </div>
+      <div class="social-icons">
+        <button class="Btn" onclick="window.location.href='https://github.com/nicolasdepaulla/Conecta-Empresas'">
+          <svg class="svgIcon" viewBox="0 0 496 512" height="1.4em" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
+            </path>
+          </svg>
+          <span class="text">Github</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Gráfico Pacotes Mais Vendidos
+    const ctxPacotes = document.getElementById('pacotesMaisVendidos').getContext('2d');
+    new Chart(ctxPacotes, {
+      type: 'bar',
+      data: {
+        labels: ['Agro', 'Imobiliário', 'Construção', 'Cosméticos', 'Tecnologia', 'Autmotivo'],
+        datasets: [{
+          label: 'Vendas',
+          data: [12, 19, 8, 5, 10, 7],
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          borderColor: 'rgba(75, 192, 192, 1)',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+    // Gráfico Total de Pacotes Vendidos
+    const ctxTotalPacotes = document.getElementById('totalPacotesVendidos').getContext('2d');
+    new Chart(ctxTotalPacotes, {
+      type: 'line',
+      data: {
+        labels: ['Imobiliário', 'Agro', 'Construção', 'Tecnologia', 'Cosméticos', 'Automotivo'],
+        datasets: [{
+          label: 'Mais Acessados',
+          data: [40, 90, 29, 56, 15, 20],
+          backgroundColor: 'rgba(153, 102, 255, 0.2)',
+          borderColor: 'rgba(153, 102, 255, 1)',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+    // Gráfico Pacotes Destacados Entre Clientes
+    const ctxDestacados = document.getElementById('pacotesDestacados').getContext('2d');
+    new Chart(ctxDestacados, {
+      type: 'pie',
+      data: {
+        labels: ['Agro', 'Tecnologia', 'Imobiliário', 'Construção', 'Automotivo', 'Cosméticos'], // Adicionando Pacote E e Pacote F
+        datasets: [{
+          label: 'Destacados',
+          data: [35, 25, 20, 10, 5, 5], // Atualizando os dados dos pacotes
+          backgroundColor: ['#ff6384', '#36a2eb', '#cc65fe', '#ffce56', '#00A36C', '#FFA500'], // Cores para os pacotes E e F
+          hoverOffset: 4
+        }]
+      },
+    });
+
+  </script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

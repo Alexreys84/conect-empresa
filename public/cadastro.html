@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuário</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('img/login.jpeg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        /* Barra de navegação fixa no topo */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* Cor do site, ajuste conforme necessário */
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            z-index: 1000; /* Para garantir que fique acima */
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        nav svg {
+            fill: white;
+            width: 24px;
+            height: 24px;
+        }
+
+        nav span {
+            margin-left: 8px;
+        }
+
+       
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .dots-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .dots.dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: white;
+            opacity: 0.2;
+            animation: jump 0.6s linear infinite var(--delay);
+        }
+
+        .dots.dot:nth-child(1) {
+            --delay: 0ms;
+        }
+
+        .dots.dot:nth-child(2) {
+            --delay: 100ms;
+        }
+
+        .dots.dot:nth-child(3) {
+            --delay: 200ms;
+        }
+
+        @keyframes jump {
+            0% {
+                opacity: 0.2;
+                transform: translateY(0px);
+            }
+
+            33% {
+                opacity: 0.6;
+                transform: translateY(-9px);
+            }
+
+            66% {
+                opacity: 0.2;
+                transform: translateY(0px);
+            }
+        }
+
+        .dots-container .dot + .dot {
+            margin-left: 8px;
+        }
+
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <!-- Barra de Navegação fixa no topo -->
+    <nav>
+        <a href="/home">           
+            <button class="action-btn">
+                <div class="action-btn-wrapper">
+                  <span class="action-btn-icon">
+                    <svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"
+                      ></path>
+                    </svg>
+                  </span>
+                  <span class="action-btn-icon">
+                    <svg viewBox="0 0 46 40">
+                      <path
+                        d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"
+                      ></path>
+                    </svg>
+                  </span>
+                </div>
+              </button>                  
+        </a>
+    </nav>
+
+    <div class="cadastro">
+        <h2>Cadastro de Usuário</h2>
+        <form id="registrationForm">
+            <div class="form-group">
+                <label for="username">Usuário</label>
+                <input type="text" id="username" name="username" required>
+                <div id="usernameError" class="error"></div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                <div id="emailError" class="error"></div>
+            </div>
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input type="password" id="password" name="password" required>
+                <div id="passwordError" class="error"></div>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirmar Senha</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+                <div id="confirmPasswordError" class="error"></div>
+            </div>
+            <div class="form-group">
+                <button type="submit">Cadastrar</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Animação de Carregamento -->
+    <div class="loading-overlay">
+        <div class="dots-container">
+            <div class="dots dot"></div>
+            <div class="dots dot"></div>
+            <div class="dots dot"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        document.getElementById("registrationForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Previne o envio imediato do formulário
+            
+            // Exibe a animação de carregamento
+            document.querySelector(".loading-overlay").style.display = "flex";
+            
+            // Cria um atraso de 1,2 segundos
+            setTimeout(function () {
+                // Agora pode enviar o formulário de forma normal
+                document.getElementById("registrationForm").submit();
+                
+            }, 1200); // Espera 1,2 segundos
+        });
+    </script>
+</body>
+
+</html>
