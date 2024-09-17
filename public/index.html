@@ -343,24 +343,27 @@
         .custom-footer .social-icons a:hover {
             color: #007bff;
         }    
-       /* Card animando home */
+    /* Card animando home */
+/* Card animando home */
 .container-conect {
     width: 100%;
     min-height: 65vh;
     display: flex;
-    align-items: flex-start; /* Alinha o card ao topo do container */
-    justify-content: flex-start; /* Alinha o card à esquerda */
-    text-align: left; /* Alinha o conteúdo do card à esquerda */
+    flex-wrap: wrap; /* Permite que os cards fiquem em várias linhas */
+    justify-content: space-between; /* Espaçamento uniforme entre os cards */
     margin-top: 20px; /* Evita sobreposição do rodapé */
-    padding: 60px; /* Espaçamento para o conteúdo interno */
+    padding: 60px; /* Espaçamento interno */
     box-sizing: border-box; /* Inclui o padding no tamanho total */
+    gap: 30px; /* Espaçamento entre os cards */
+    z-index: 0;
+    margin-top: -90px;
 }
 
 .card-conect {
     border-radius: 16px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     cursor: pointer;
-    width: 360px;
+    width: calc(33.333% - 40px); /* Largura ajustada para 3 cards por linha */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -369,6 +372,8 @@
     overflow: hidden;
     background-image: linear-gradient(#333, #333);
     transition: all .5s;
+    z-index: 0;
+    margin-bottom: 30px; /* Para evitar o corte do card ao subir */
 }
 
 .card-conect:hover {
@@ -380,11 +385,11 @@
 }
 
 .card-conect .img-conect {
-    width: 360px;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 200px;
+    height: 250px; /* Aumenta a altura da imagem */
     background-image: url(./img/login.jpeg);
     background-size: cover;
     background-position: center;
@@ -403,7 +408,6 @@
 }
 
 .card-conect:hover .img-conect {
-    width: 430px;
     opacity: 1;
 }
 
@@ -638,28 +642,92 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-    </div>
+    </div>    
     <div class="container-conect">
+        <!-- Card 1 -->
         <div class="card-conect">
             <div class="img-conect">
                 <span></span>
             </div>
-
             <div class="content-conect">
                 <span class="title-conect">Conecta Empresa</span>
-                <p class="desc-conect">O Conecta Empresa é uma plataforma
-                     inovadora que tem como objetivo facilitar a 
-                     comunicação e a integração entre empresas e 
-                     seus colaboradores. Nosso web app oferece uma 
-                     interface intuitiva e eficiente para gerenciar 
-                     informações internas, centralizar processos e 
-                     otimizar a troca de dados dentro da organização..</p>
+                <p class="desc-conect">Descrição para o primeiro card...</p>
             </div>
             <div class="arrow-conect">
                 <span>&#8673;</span>
             </div>
         </div>
-    </div>
+        
+        <!-- Card 2 -->
+        <div class="card-conect">
+            <div class="img-conect">
+                <span></span>
+            </div>
+            <div class="content-conect">
+                <span class="title-conect">Card 2</span>
+                <p class="desc-conect">Descrição para o segundo card...</p>
+            </div>
+            <div class="arrow-conect">
+                <span>&#8673;</span>
+            </div>
+        </div>
+    
+        <!-- Card 3 -->
+        <div class="card-conect">
+            <div class="img-conect">
+                <span></span>
+            </div>
+            <div class="content-conect">
+                <span class="title-conect">Card 3</span>
+                <p class="desc-conect">Descrição para o terceiro card...</p>
+            </div>
+            <div class="arrow-conect">
+                <span>&#8673;</span>
+            </div>
+        </div>
+    
+        <!-- Card 4 -->
+        <div class="card-conect">
+            <div class="img-conect">
+                <span></span>
+            </div>
+            <div class="content-conect">
+                <span class="title-conect">Card 4</span>
+                <p class="desc-conect">Descrição para o quarto card...</p>
+            </div>
+            <div class="arrow-conect">
+                <span>&#8673;</span>
+            </div>
+        </div>
+    
+        <!-- Card 5 -->
+        <div class="card-conect">
+            <div class="img-conect">
+                <span></span>
+            </div>
+            <div class="content-conect">
+                <span class="title-conect">Card 5</span>
+                <p class="desc-conect">Descrição para o quinto card...</p>
+            </div>
+            <div class="arrow-conect">
+                <span>&#8673;</span>
+            </div>
+        </div>
+    
+        <!-- Card 6 -->
+        <div class="card-conect">
+            <div class="img-conect">
+                <span></span>
+            </div>
+            <div class="content-conect">
+                <span class="title-conect">Card 6</span>
+                <p class="desc-conect">Descrição para o sexto card...</p>
+            </div>
+            <div class="arrow-conect">
+                <span>&#8673;</span>
+            </div>
+        </div>
+    </div>    
     <footer>
         <div id="div-fixa" class="flutuar" data-shrink="yes">
             <a href="http://api.whatsapp.com/send?phone=5511949000927" target="_blank">
