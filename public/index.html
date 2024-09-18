@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
    
     <style>
+
+        
         .Btn {
             border: none;
             border-radius: 50%;
@@ -89,7 +91,8 @@
             border-radius: 10px;
             display: inline-block;
             margin-bottom: 20px;
-        }
+            }
+        
 
         /* Estilos para o rodapé do WhatsApp */
         #div-fixa {
@@ -155,8 +158,7 @@
             /* Cor do texto em branco */
             padding: 10px 0;
             /* Espaçamento interno de 10px no topo e no fundo do rodapé */
-            position: fixed;
-            /* Fixa o rodapé na parte inferior da página */
+           
             bottom: 0;
             /* Posiciona o rodapé exatamente no fundo da página */
             width: 100%;
@@ -312,7 +314,6 @@
             background-color: #7a7f87;
             color: #fff;
             padding: 10px 0;
-            position: fixed;
             bottom: 0;
             width: 100%;
         }
@@ -343,11 +344,23 @@
         .custom-footer .social-icons a:hover {
             color: #007bff;
         }    
-    /* Card animando home */
-.container-conect {
+
+       
+       /* css cards responsivos */
+ .container-conect {
+
     width: 100%;
-    min-height: 65vh;
+    min-height: 100vh;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(33, 37, 41);
+    text-align: center;
+    gap: 20px; /* Espaçamento entre os cards */
+    z-index: 0;
+    flex-wrap: wrap; /* Permite que os cards se ajustem em dispositivos menores */
+   
+
     flex-wrap: wrap; /* Permite que os cards fiquem em várias linhas */
     justify-content: space-between; /* Espaçamento uniforme entre os cards */
     margin-top: 20px; /* Evita sobreposição do rodapé */
@@ -356,11 +369,14 @@
     gap: 30px; /* Espaçamento entre os cards */
     z-index: 0;
     margin-top: -90px;
+
 }
 .card-conect {
     border-radius: 16px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     cursor: pointer;
+  width: 418px;
+
     width: calc(33.333% - 40px); /* Largura ajustada para 3 cards por linha */
     display: flex;
     flex-direction: column;
@@ -371,6 +387,9 @@
     background-image: linear-gradient(#333, #333);
     transition: all .5s;
     z-index: 0;
+
+    margin-bottom: 240px; /* Para evitar o corte do card ao subir */
+
     margin-bottom: 30px; /* Para evitar o corte do card ao subir */
 }
 .card-conect:hover {
@@ -380,6 +399,8 @@
     text-align: center;
 }
 .card-conect .img-conect {
+
+    width: 416px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -445,6 +466,98 @@
 }
 .card-conect .arrow-conect span {
     font-size: 24px;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    .card-conect {
+        width: 100%; /* O card ocupa 100% da largura da tela */
+        margin: 10px; /* Ajusta o espaçamento em volta */
+    }
+
+    .card-conect .img-conect {
+        width: 100%; /* A imagem se ajusta à largura do card */
+        height: 180px; /* Reduz um pouco a altura da imagem para dispositivos menores */
+    }
+
+    .card-conect .content-conect {
+        padding: 10px; /* Menos preenchimento para dispositivos menores */
+    }
+
+    .card-conect .content-conect .title-conect {
+        font-size: 18px; /* Texto um pouco menor para caber em telas pequenas */
+    }
+
+    .card-conect .content-conect .desc-conect {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-conect {
+        width: 100%; /* O card se ajusta para telas bem pequenas */
+        margin-top: 140px;
+    }
+
+    .card-conect .img-conect {
+        height: 185px; /* Reduz ainda mais a altura da imagem */
+        width: 400px;
+    }
+
+    .card-conect .content-conect .title-conect {
+        font-size: 16px; /* Texto ainda menor para caber em telas pequenas */
+    }
+
+    .card-conect .content-conect .desc-conect {
+        font-size: 12px;
+    }
+}
+/* Responsividade para dispositivos intermediários (tablets) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container-conect {
+        gap: 10px; /* Reduz o espaçamento entre os cards */
+    }
+
+    .card-conect {
+        width: 200px; /* Ajusta a largura para caber mais cards na tela */
+        margin: 10px; /* Ajusta o espaçamento em volta */
+        margin-bottom: 55%;
+    }
+
+    .card-conect .img-conect {
+        width: 100%; /* A imagem se ajusta à largura do card */
+        height: 180px; /* Altura ajustada para tablets */
+    }
+
+    .card-conect .content-conect {
+        padding: 10px;
+    }
+
+    .card-conect .content-conect .title-conect {
+        font-size: 18px; /* Tamanho do título ajustado para tablets */
+    }
+
+    .card-conect .content-conect .desc-conect {
+        font-size: 14px; /* Ajuste para tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .card-conect {
+        width: 100%; /* O card se ajusta para telas bem pequenas */
+    }
+
+    .card-conect .img-conect {
+        height: 150px; /* Reduz ainda mais a altura da imagem */
+    }
+
+    .card-conect .content-conect .title-conect {
+        font-size: 16px; /* Texto ainda menor para caber em telas pequenas */
+    }
+
+    .card-conect .content-conect .desc-conect {
+        font-size: 12px;
+    }
 }
     </style>
 </head>
@@ -624,6 +737,13 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
+
+            <!-- Packs mais vendidos -->
+        <span class="d-block text-center highlight-span">Ofertas do mês</span>
+        </div>     
+    </div>    
+        
+
         </div>
     </div>    
     <div class="container-conect">
@@ -635,6 +755,7 @@
             <div class="content-conect">
                 <span class="title-conect">Conecta Empresa</span>
                 <p class="desc-conect">Descrição para o primeiro card...</p>
+
             </div>
             <div class="arrow-conect">
                 <span>&#8673;</span>
@@ -668,49 +789,10 @@
                 <span>&#8673;</span>
             </div>
         </div>
-    
-        <!-- Card 4 -->
-        <div class="card-conect">
-            <div class="img-conect">
-                <span></span>
-            </div>
-            <div class="content-conect">
-                <span class="title-conect">Card 4</span>
-                <p class="desc-conect">Descrição para o quarto card...</p>
-            </div>
-            <div class="arrow-conect">
-                <span>&#8673;</span>
-            </div>
-        </div>
-    
-        <!-- Card 5 -->
-        <div class="card-conect">
-            <div class="img-conect">
-                <span></span>
-            </div>
-            <div class="content-conect">
-                <span class="title-conect">Card 5</span>
-                <p class="desc-conect">Descrição para o quinto card...</p>
-            </div>
-            <div class="arrow-conect">
-                <span>&#8673;</span>
-            </div>
-        </div>
-    
-        <!-- Card 6 -->
-        <div class="card-conect">
-            <div class="img-conect">
-                <span></span>
-            </div>
-            <div class="content-conect">
-                <span class="title-conect">Card 6</span>
-                <p class="desc-conect">Descrição para o sexto card...</p>
-            </div>
-            <div class="arrow-conect">
-                <span>&#8673;</span>
-            </div>
-        </div>
-    </div>    
+    </div>
+</div>             
+                  
+       
     <footer>
         <div id="div-fixa" class="flutuar" data-shrink="yes">
             <a href="http://api.whatsapp.com/send?phone=5511949000927" target="_blank">
@@ -730,7 +812,7 @@
             </div>
             <div class="social-icons">
                 <button class="Btn"
-                    onclick="window.location.href='https://github.com/nicolasdepaulla/Conecta-Empresas'">
+                    onclick="window.location.href='https:github.com/nicolasdepaulla/Conecta-Empresas'">
                     <svg class="svgIcon" viewBox="0 0 496 512" height="1.4em" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
