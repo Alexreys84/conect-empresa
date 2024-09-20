@@ -280,6 +280,244 @@
 .custom-footer .social-icons a:hover {
     color: #007bff;
 }
+ /* css cards responsivos */
+ .container-conect {
+
+width: 100%;
+min-height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+background-color: rgb(33, 37, 41);
+text-align: center;
+gap: 20px; /* Espaçamento entre os cards */
+z-index: 0;
+flex-wrap: wrap; /* Permite que os cards se ajustem em dispositivos menores */
+
+
+flex-wrap: wrap; /* Permite que os cards fiquem em várias linhas */
+justify-content: space-between; /* Espaçamento uniforme entre os cards */
+margin-top: 20px; /* Evita sobreposição do rodapé */
+padding: 60px; /* Espaçamento interno */
+box-sizing: border-box; /* Inclui o padding no tamanho total */
+gap: 30px; /* Espaçamento entre os cards */
+z-index: 0;
+margin-top: -90px;
+
+}
+.card-conect {
+border-radius: 16px;
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+cursor: pointer;
+width: 418px;
+
+width: calc(33.333% - 40px); /* Largura ajustada para 3 cards por linha */
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+position: relative;
+overflow: hidden;
+background-image: linear-gradient(#333, #333);
+transition: all .5s;
+z-index: 0;
+
+margin-bottom: 240px; /* Para evitar o corte do card ao subir */
+
+margin-bottom: 30px; /* Para evitar o corte do card ao subir */
+}
+.card-conect:hover {
+background-image: linear-gradient(#252525, #252525);
+}
+.content-conect {
+text-align: center;
+}
+.card-conect .img-conect {
+
+width: 416px;
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 250px; /* Aumenta a altura da imagem */
+background-image: url(./img/login.jpeg);
+background-size: cover;
+background-position: center;
+transition: all .5s;
+z-index: 2;
+position: relative;
+opacity: .8;
+}
+.card-conect .img-conect span {
+text-transform: uppercase;
+font-size: 24px;
+font-weight: 100;
+font-style: italic;
+transition: all .5s;
+}
+.card-conect:hover .img-conect {
+opacity: 1;
+}
+.card-conect:hover .img-conect span {
+font-size: 28px;
+}
+.card-conect .content-conect {
+padding: 0px 20px;
+height: 0;
+opacity: 0;
+transition: all .5s;
+position: relative;
+box-sizing: border-box;
+overflow: hidden;
+transform: translateY(30px);
+}
+.card-conect:hover .content-conect {
+height: 260px;
+padding: 20px;
+opacity: 1;
+transform: translateY(0);
+}
+.card-conect .content-conect p {
+margin: 0;
+}
+.card-conect .content-conect .title-conect {
+font-size: 20px;
+font-weight: 600;
+}
+.card-conect .content-conect .desc-conect {
+font-size: 14px;
+font-weight: 100;
+opacity: .8;
+margin-top: 8px;
+}
+.card-conect .arrow-conect {
+padding: 15px;
+transform: rotate(-180deg);
+transition: all .5s;
+}
+.card-conect:hover .arrow-conect {
+transform: rotate(0);
+}
+.card-conect .arrow-conect span {
+font-size: 24px;
+}
+/* css do botao do card animado*/
+.custom-button{
+margin: 12px;
+height: 50px;
+width: 200px;
+border-radius: 10px;
+background: #333;
+justify-content: center;
+align-items: center;
+box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #444,
+inset -5px -5px 10px #222;
+font-family: "Damion", cursive;
+cursor: pointer;
+border: none;
+font-size: 16px;
+color: rgb(161, 161, 161);
+transition: 500ms;
+}
+
+.custom-button:hover {
+box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #222,
+inset -5px -5px 10px #444;
+color: #d6d6d6;
+transition: 500ms;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+.card-conect {
+    width: 100%; /* O card ocupa 100% da largura da tela */
+    margin: 10px; /* Ajusta o espaçamento em volta */
+}
+
+.card-conect .img-conect {
+    width: 100%; /* A imagem se ajusta à largura do card */
+    height: 180px; /* Reduz um pouco a altura da imagem para dispositivos menores */
+}
+
+.card-conect .content-conect {
+    padding: 10px; /* Menos preenchimento para dispositivos menores */
+}
+
+.card-conect .content-conect .title-conect {
+    font-size: 18px; /* Texto um pouco menor para caber em telas pequenas */
+}
+
+.card-conect .content-conect .desc-conect {
+    font-size: 12px;
+}
+}
+
+@media (max-width: 480px) {
+.card-conect {
+    width: 100%; /* O card se ajusta para telas bem pequenas */
+    margin-top: 140px;
+}
+
+.card-conect .img-conect {
+    height: 185px; /* Reduz ainda mais a altura da imagem */
+    width: 400px;
+}
+
+.card-conect .content-conect .title-conect {
+    font-size: 16px; /* Texto ainda menor para caber em telas pequenas */
+}
+
+.card-conect .content-conect .desc-conect {
+    font-size: 12px;
+}
+}
+/* Responsividade para dispositivos intermediários (tablets) */
+@media (min-width: 769px) and (max-width: 1024px) {
+.container-conect {
+    gap: 10px; /* Reduz o espaçamento entre os cards */
+}
+
+.card-conect {
+    width: 200px; /* Ajusta a largura para caber mais cards na tela */
+    margin: 10px; /* Ajusta o espaçamento em volta */
+    margin-bottom: 55%;
+}
+
+.card-conect .img-conect {
+    width: 100%; /* A imagem se ajusta à largura do card */
+    height: 180px; /* Altura ajustada para tablets */
+}
+
+.card-conect .content-conect {
+    padding: 10px;
+}
+
+.card-conect .content-conect .title-conect {
+    font-size: 18px; /* Tamanho do título ajustado para tablets */
+}
+
+.card-conect .content-conect .desc-conect {
+    font-size: 14px; /* Ajuste para tablets */
+}
+}
+
+@media (max-width: 480px) {
+.card-conect {
+    width: 100%; /* O card se ajusta para telas bem pequenas */
+}
+
+.card-conect .img-conect {
+    height: 150px; /* Reduz ainda mais a altura da imagem */
+}
+
+.card-conect .content-conect .title-conect {
+    font-size: 16px; /* Texto ainda menor para caber em telas pequenas */
+}
+
+.card-conect .content-conect .desc-conect {
+    font-size: 12px;
+}
+}
     </style>
 </head>
 
@@ -459,10 +697,74 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
+            <!-- Packs mais vendidos -->
+     <span class="d-block text-center highlight-span">Ofertas do mês</span>
+    </div>     
+</div>    
+    
+        </div>
+    </div>
+     
+
+    </div>
+</div>    
+<div class="container-conect">
+    <!-- Card 1 -->
+    <div class="card-conect">
+        <div class="img-conect">
+            <span></span>
+        </div>
+        <div class="content-conect">
+            <span class="title-conect">Turismo e Hotelaría</span>
+            <li>100 Contatos incluindo:</li>
+            <li>Número de Telefone</li>
+            <li>Email Corporativo</li>
+            <li>CNPJ</li>
+            <button class="custom-button">Comprar Agora</button>
+        </div>
+        <div class="arrow-conect">
+            <span>&#8673;</span>
+        </div>
+    </div>
+    
+    <!-- Card 2 -->
+    <div class="card-conect">
+        <div class="img-conect">
+            <span></span>
+        </div>
+        <div class="content-conect">
+            <span class="title-conect">Pet-shop</span>
+            <li>100 Contatos incluindo:</li>
+            <li>Número de Telefone</li>
+            <li>Email Corporativo</li>
+            <li>CNPJ</li>
+            <button class="custom-button">Comprar Agora</button>
+        </div>
+        <div class="arrow-conect">
+            <span>&#8673;</span>
         </div>
     </div>
 
-    
+    <!-- Card 3 -->
+    <div class="card-conect">
+        <div class="img-conect">
+            <span></span>
+        </div>
+        <div class="content-conect">
+            <span class="title-conect">Fitness</span>
+            <li>100 Contatos incluindo:</li>
+            <li>Número de Telefone</li>
+            <li>Email Corporativo</li>
+            <li>CNPJ</li>
+            <button class="custom-button">Comprar Agora</button>
+        </div>
+        <div class="arrow-conect">
+            <span>&#8673;</span>
+        </div>
+    </div>
+</div>
+</div>             
+                  
     <footer>
         <div id="div-fixa" class="flutuar" data-shrink="yes">
             <a href="http://api.whatsapp.com/send?phone=5511949000927" target="_blank">
@@ -473,7 +775,6 @@
             </a>
         </div>
     </footer>
-
     <!-- Novo Rodapé -->
 <footer class="custom-footer">
     <div class="container">
