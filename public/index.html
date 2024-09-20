@@ -467,6 +467,31 @@
 .card-conect .arrow-conect span {
     font-size: 24px;
 }
+/* css do botao do card animado*/
+.custom-button{
+  margin: 12px;
+  height: 50px;
+  width: 200px;
+  border-radius: 10px;
+  background: #333;
+  justify-content: center;
+  align-items: center;
+  box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #444,
+    inset -5px -5px 10px #222;
+  font-family: "Damion", cursive;
+  cursor: pointer;
+  border: none;
+  font-size: 16px;
+  color: rgb(161, 161, 161);
+  transition: 500ms;
+}
+
+.custom-button:hover {
+  box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #222,
+    inset -5px -5px 10px #444;
+  color: #d6d6d6;
+  transition: 500ms;
+}
 
 /* Responsividade para dispositivos móveis */
 @media (max-width: 768px) {
@@ -558,6 +583,8 @@
     .card-conect .content-conect .desc-conect {
         font-size: 12px;
     }
+    
+
 }
     </style>
 </head>
@@ -753,9 +780,12 @@
                 <span></span>
             </div>
             <div class="content-conect">
-                <span class="title-conect">Conecta Empresa</span>
-                <p class="desc-conect">Descrição para o primeiro card...</p>
-
+                <span class="title-conect">Turismo e Hotelaría</span>
+                <li>100 Contatos incluindo:</li>
+                <li>Número de Telefone</li>
+                <li>Email Corporativo</li>
+                <li>CNPJ</li>
+                <button class="custom-button">Comprar Agora</button>
             </div>
             <div class="arrow-conect">
                 <span>&#8673;</span>
@@ -768,8 +798,12 @@
                 <span></span>
             </div>
             <div class="content-conect">
-                <span class="title-conect">Card 2</span>
-                <p class="desc-conect">Descrição para o segundo card...</p>
+                <span class="title-conect">Pet-shop</span>
+                <li>100 Contatos incluindo:</li>
+                <li>Número de Telefone</li>
+                <li>Email Corporativo</li>
+                <li>CNPJ</li>
+                <button class="custom-button">Comprar Agora</button>
             </div>
             <div class="arrow-conect">
                 <span>&#8673;</span>
@@ -782,8 +816,12 @@
                 <span></span>
             </div>
             <div class="content-conect">
-                <span class="title-conect">Card 3</span>
-                <p class="desc-conect">Descrição para o terceiro card...</p>
+                <span class="title-conect">Fitness</span>
+                <li>100 Contatos incluindo:</li>
+                <li>Número de Telefone</li>
+                <li>Email Corporativo</li>
+                <li>CNPJ</li>
+                <button class="custom-button">Comprar Agora</button>
             </div>
             <div class="arrow-conect">
                 <span>&#8673;</span>
@@ -803,6 +841,7 @@
             </a>
         </div>
     </footer>
+    <a href="#logo" id="topo"><img src="img/topo.png" alt="seta topo"></a>
     <!-- Novo Rodapé -->
     <footer class="custom-footer">
         <div class="container">
@@ -823,10 +862,12 @@
             </div>
         </div>
     </footer>
-
+   
     <script src="botao.js"></script>
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+     <!-- topo -->
+    
 </body>
 
 </html>
