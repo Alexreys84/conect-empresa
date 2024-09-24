@@ -76,11 +76,11 @@ body {
     background-size: cover;
     padding: 40px;
     border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);    
     color: #fff;
     text-align: center;
     position: relative; /* Necessário para o fundo translúcido */
+    margin-top: 134px;
 }
 
 .login-panel::before {
